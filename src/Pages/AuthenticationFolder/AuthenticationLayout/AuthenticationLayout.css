@@ -1,0 +1,61 @@
+.authentication-content {
+    position: relative;
+    width: 50%;
+    height: 600px;
+    border-radius: 10px;
+    background-color: rgb(17, 20, 17);
+}
+.back-button {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    text-decoration: none;
+    color: #50c458;
+    font-size: 20px;
+    transition: 0.4s;
+}
+.back-button:hover {
+    transform: translateX(-5px);
+    color: #50c458;
+}
+
+  
+@media screen and (max-width: 767.98px) {
+    .authentication-content {
+        width: 80%;
+        height: auto;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991.98px){
+    .authentication-content {
+        width: 80%;
+        height: auto;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1399.98px){
+    .authentication-content {
+        width: 70%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1550px) and (max-width: 1799.98px){
+    .authentication-content {
+        width: 55%;
+        height: 700px;
+    }
+}
+
+@media screen and (min-width: 1800px) and (max-width: 2499.98px){
+    .authentication-content {
+        width: 50%;
+        height: 750px;
+    }
+}
+
+@media screen and (min-width: 2500px){
+    .authentication-content {
+        width: 40%;
+        height: 800px;
+    }
+}

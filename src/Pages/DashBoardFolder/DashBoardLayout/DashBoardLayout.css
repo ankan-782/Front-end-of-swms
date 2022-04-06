@@ -1,0 +1,67 @@
+#dashboard {
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    transition: top 0.3s; 
+}
+.hamburger-icon {
+    border-radius: 50%;
+    padding: 7px;
+    color: #50c458;
+}
+.hamburger-icon:focus {
+    box-shadow: 0px 0px 5px 5px #50c45856;
+}
+.offcanvas-start {
+    width: 300px;
+}
+.btn:focus {
+    box-shadow: none;
+}
+.nav-item-links-offcanvas {
+    text-decoration: none;
+    color: rgb(227, 255, 227);
+    font-size: 25px;
+    transition: 0.3s;
+}
+.nav-item-links-offcanvas:hover {
+    color: #50c458;
+}
+.nav-dashboard {
+    color: yellow !important;
+}
+.nav-dashboard:hover {
+    color: #50c458 !important;
+}
+.user-img-dashboard-1 {
+    border: 2px solid rgb(227, 255, 227);
+    object-fit: cover;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.user-img-dashboard-2 {
+    border: 2px solid rgb(227, 255, 227);
+    object-fit: cover;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+.dropdown-menu {
+    color: rgb(227, 255, 227);
+    border-radius: 10px;
+    background-color: rgb(17, 20, 17);
+    box-shadow: 0px 0px 10px 4px #50c458;
+}
+.dropdown-item {
+    color: rgb(227, 255, 227);
+}
+.dropdown-item:hover {
+    font-weight: bold;
+    background-color: #50c458;
+}
+@media screen and (max-width: 991.98px){
+    .dropdown-menu {
+        width: 50%;
+    }
+}

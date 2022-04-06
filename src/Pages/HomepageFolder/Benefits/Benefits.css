@@ -1,0 +1,29 @@
+.benefits-content {
+    padding-top: 76px;
+}
+
+.tick {
+    width: 5%;
+}
+
+.benefits-gif {
+    width: 70%;
+}
+
+@media screen and (max-width: 575.98px) {
+    .benefits-gif {
+        width: 100%;
+    }
+    .tick {
+        width: 10%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991.98px) {
+    .benefits-gif {
+        width: 100%;
+    }
+    .tick {
+        width: 10%;
+    }
+}

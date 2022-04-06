@@ -1,0 +1,23 @@
+.logo-img-authentication-page {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+.signIn-signUp-title {
+    color: #50c458;
+}
+.button-links {
+    width: 50%;
+    margin: 0 auto;
+}
+.authentication-page-alert {
+    font-size: 14px;
+}
+@media screen and (max-width: 767.98px) {
+    .logo-img-authentication-page {
+        width: 90%;
+    }
+    .button-links {
+        width: 100%;
+    }
+}

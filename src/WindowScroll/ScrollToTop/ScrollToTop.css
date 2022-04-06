@@ -1,0 +1,13 @@
+.go-to-top-arrow-icon {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 100;
+    font-size: 50px;
+    color: #50c458;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.go-to-top-arrow-icon:hover {
+    transform: translateY(-10px);
+}

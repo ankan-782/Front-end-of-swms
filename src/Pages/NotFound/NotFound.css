@@ -1,0 +1,48 @@
+.notFound {
+    display: block;
+    margin: 0 auto;
+    width: 45%;
+}
+.logo2 {
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+}
+.button-not-found {
+    color: black;
+    text-decoration: none;
+    background-color: rgb(65, 189, 65);
+    border-radius: 10px;
+    padding: 13px 20px;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+.button-not-found:hover {
+    background-color: #212529;
+    color: white;
+}
+
+@media screen and (max-width: 767.98px) {
+    .notFound {
+        width: 80%;
+    }
+    .logo2 {
+        width: 50%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991.98px){
+    .notFound {
+        width: 70%;
+    }
+    .logo2 {
+        width: 40%;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1399.98px){
+    .notFound {
+        width: 60%;
+    }
+    .logo2 {
+        width: 30%;
+    }
+}

@@ -1,0 +1,42 @@
+.home-content {
+    padding-top: 76px;
+}
+.home-gif {
+    width: 100%;
+}
+.heading {
+    font-size: 4rem;
+}
+.home-dynamic-content {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.226);
+}
+.home-dynamic-content h1 {
+    font-size: 3rem;
+}
+.vl {
+    border-right: 1px solid rgba(128, 128, 128, 0.527);
+    height: auto;
+}
+.btn-close:focus {
+    box-shadow: 0px 0px 5px 5px #50c45856;
+}
+.modal-content {
+    border-radius: 10px;
+}
+@media screen and (max-width: 575.98px) {
+    .heading {
+        font-size: 3rem;
+    }
+    .home-dynamic-content {
+        width: 100%;
+    }
+    .home-dynamic-content h1 {
+        font-size: 30px;
+    }
+    .vl {
+        border: none
+    }
+}

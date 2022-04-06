@@ -1,0 +1,17 @@
+.toast-container {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    overflow: hidden;
+}
+.active-toast {
+    opacity: 1;
+}
+.toast-bg{
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    color: black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: #50c458;
+}

@@ -1,0 +1,32 @@
+.dashboard-layout {
+    padding-top: 76px;
+}
+.search-field-dashboard {
+    width: 100% ;
+}
+.date-field-dashboard {
+    width: 100% ;
+}
+.search-field-dashboard i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.dncc {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+.dscc {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+@media screen and (min-width:992px){
+    .search-field-dashboard {
+        width: 48%;
+    }
+    .date-field-dashboard {
+        width: 48%;
+    }
+}
