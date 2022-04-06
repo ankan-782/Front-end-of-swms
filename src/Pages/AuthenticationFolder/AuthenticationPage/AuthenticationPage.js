@@ -12,7 +12,7 @@ const AuthenticationPage = () => {
             <div className='mt-5'>
                 <h1 className='mb-4'>আপনি কে ?</h1>
                 <div className='button-links'>
-                    <Link to='/authentication/login' className='mx-auto button-for-black-bg d-block mb-3'>ট্রাক ড্রাইভার</Link>
+                    <Link to='/authentication/loginForTruckDriver' className='mx-auto button-for-black-bg d-block mb-3'>ট্রাক ড্রাইভার</Link>
                     <Link to='/authentication/loginForCityCorp' className='mx-auto button-for-black-bg d-block'>সিটি কর্পোরেশন অথোরিটি</Link>
                 </div>
                 {/* <div className='authentication-page-alert'>

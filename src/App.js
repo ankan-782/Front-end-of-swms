@@ -35,8 +35,8 @@ function App() {
         </Route>
         <Route path='authentication' element={<AuthenticationRoute><AuthenticationLayout /></AuthenticationRoute>} >
           <Route index element={<AuthenticationPage />} />
-          <Route path='login' element={<LoginForTruckDriver />} />
-          <Route path='login/forgotPassForTruckDriver' element={<ForgotPasswordForTruckDriver />} />
+          <Route path='loginForTruckDriver' element={<LoginForTruckDriver />} />
+          <Route path='loginForTruckDriver/forgotPassForTruckDriver' element={<ForgotPasswordForTruckDriver />} />
           <Route path='loginForCityCorp' element={<LoginForCityCorp />} />
           <Route path='loginForCityCorp/forgotPassForCityCorp' element={<ForgotPasswordForCityCorp />} />
         </Route>

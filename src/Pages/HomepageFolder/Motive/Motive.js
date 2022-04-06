@@ -6,7 +6,7 @@ const Motive = () => {
     return (
         <div id='motive' className='all-page-bg page-bg-white d-flex justify-content-center align-items-center'>
             <div className='container motive-content'>
-                <div className='mb-4 mb-lg-0 mt-5 mt-lg-0'>
+                <div className='mb-5 mb-lg-0 mt-5 mt-lg-0'>
                     <h1 style={{ 'fontSize': '3rem' }} className='fw-bold text-center'>আমাদের উদ্দেশ্য</h1>
                 </div>
                 <div className="row mb-5 mb-lg-0">

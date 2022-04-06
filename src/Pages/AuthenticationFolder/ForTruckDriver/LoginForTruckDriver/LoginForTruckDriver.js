@@ -60,7 +60,7 @@ const LoginForTruckDriver = (props) => {
                         </div>
                         <button type='submit' className='form-btn p-3 fw-bold'>সাইন ইন</button>
                     </form>
-                    <Link to='/authentication/login/forgotPassForTruckDriver' className='reset-pass d-block mb-3 fw-bold'>আপনি কি পিন নাম্বার ভুলে গিয়েছেন ?</Link>
+                    <Link to='/authentication/loginForTruckDriver/forgotPassForTruckDriver' className='reset-pass d-block mb-3 fw-bold'>আপনি কি পিন নাম্বার ভুলে গিয়েছেন ?</Link>
                     {/* <Link to='/dashboard/registrationForTruckDriver' className='register-divert fw-bold'>আপনি কি SWMS এ নতুন ? সাইন আপ করুন</Link> */}
                     {backendError && (<p className='mt-3 text-danger fw-bold'>{backendError}</p>)}
                     {error && (<p className='mt-3 text-danger fw-bold'>{error}</p>)}

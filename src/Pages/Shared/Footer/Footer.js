@@ -37,7 +37,7 @@ const Footer = () => {
 
     return (
         <div className='page-bg-black'>
-            <div className='container-fluid text-white p-5'>
+            <div className='container-fluid text-white p-lg-5'>
                 <div className="row gy-5">
                     <div className="col-12 col-lg-4">
                         <div>
@@ -60,13 +60,13 @@ const Footer = () => {
                                     <p style={{ 'color': '#50c458' }} className="mb-3 ">হটলাইন নম্বর</p>
                                     <div className='d-lg-flex justify-content-start'>
                                         <div className='me-5 mb-4 mb-lg-0'>
-                                            <p style={{ 'color': '#50c458' }} className="m-0 footer-small-text">ঢাকা উত্তর সিটি কর্পোরেশন</p>
-                                            <p className='m-0 footer-small-text'>৮৮ ০২-৫৫০৫২০৮৪</p>
+                                            <p style={{ 'color': '#50c458' }} className="m-0">ঢাকা উত্তর সিটি কর্পোরেশন</p>
+                                            <p className='m-0'>৮৮ ০২-৫৫০৫২০৮৪</p>
                                         </div>
                                         <div>
-                                            <p style={{ 'color': '#50c458' }} className="m-0 footer-small-text">ঢাকা দক্ষিন সিটি কর্পোরেশন</p>
-                                            <p className='m-0 footer-small-text'>০২২২৩৩৮৬০১৪</p>
-                                            <p className='m-0 footer-small-text'>০২২২৩৩৮৭৪৩১</p>
+                                            <p style={{ 'color': '#50c458' }} className="m-0">ঢাকা দক্ষিন সিটি কর্পোরেশন</p>
+                                            <p className='m-0'>০২২২৩৩৮৬০১৪</p>
+                                            <p className='m-0'>০২২২৩৩৮৭৪৩১</p>
                                         </div>
                                     </div>
                                 </div>
