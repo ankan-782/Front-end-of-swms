@@ -13,9 +13,6 @@
 .footer-description {
     font-size: 15px;
 }
-.footer-small-text {
-    font-size: 13px;
-}
 .social-links-footer a {
     font-size: 20px;
     text-decoration: none;
@@ -30,10 +27,6 @@
     color: rgb(227, 255, 227);
     transition: 0.3s;
 }
-/* .active-footer {
-    color: #50c458;
-    text-decoration: underline;
-} */
 .footer-nav-links:hover {
     color: #50c458;
 }
