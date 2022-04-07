@@ -9,7 +9,7 @@ import './Solution.css';
 
 const Solution = () => {
     return (
-        <div id='solution' className='all-page-bg page-bg-white d-flex justify-content-center align-items-center'>
+        <div id='solution' className='all-page-bg page-bg-white-odd d-flex justify-content-center align-items-center'>
             <div className='container solution-content'>
                 <div className='mb-5 mt-5 mt-lg-0'>
                     <h1 style={{ 'fontSize': '3rem' }} className='fw-bold text-center'>সমাধান হোক আমাদের সাথেই !</h1>

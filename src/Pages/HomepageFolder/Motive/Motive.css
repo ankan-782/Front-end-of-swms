@@ -1,6 +1,85 @@
+.home-dynamic-content {
+    background-color: white;
+    border-radius: 10px;
+    width: 70%;
+    margin: -150px auto 100px;
+    padding: 50px 20px;
+    box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.226);
+}
+
+.home-dynamic-content h1 {
+    font-size: 3rem;
+}
+
+.vl {
+    border-right: 1px solid rgba(128, 128, 128, 0.527);
+    height: auto;
+}
+
 .motive-content {
     padding-top: 76px;
 }
+
 .city-gif {
     width: 100%;
+}
+
+@media screen and (max-width: 575.98px) {
+    .home-dynamic-content {
+        width: 100%;
+        padding: 20px 10px;
+        margin: -100px auto 100px;
+    }
+
+    .home-dynamic-content h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991.98px) {
+    .home-dynamic-content {
+        width: 90%;
+        padding: 20px 10px;
+        margin: -110px auto 100px;
+    }
+
+    .home-dynamic-content h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    .home-dynamic-content {
+        width: 70%;
+        padding: 20px 10px;
+        margin: -130px auto 100px;
+    }
+
+    .home-dynamic-content h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .home-dynamic-content {
+        width: 70%;
+        padding: 20px 10px;
+        margin: -130px auto 100px;
+    }
+
+    .home-dynamic-content h1 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1599.98px) {
+    .home-dynamic-content {
+        width: 70%;
+        padding: 20px 10px;
+        margin: -130px auto 100px;
+    }
+
+    .home-dynamic-content h1 {
+        font-size: 40px;
+    }
 }

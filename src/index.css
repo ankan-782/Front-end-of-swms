@@ -28,8 +28,12 @@ code {
   background-color: rgb(17, 20, 17);
 }
 
-.page-bg-white {
+.page-bg-white-even {
   background-color: rgb(241, 255, 243);
+}
+
+.page-bg-white-odd {
+  background-color: rgb(233, 255, 236);
 }
 
 .active {

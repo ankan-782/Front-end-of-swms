@@ -3,7 +3,7 @@ import './Contact.css';
 
 const Contact = () => {
     return (
-        <div id='contact' className='all-page-bg d-flex justify-content-center align-items-center page-bg-white'>
+        <div id='contact' className='all-page-bg page-bg-white-even d-flex justify-content-center align-items-center page-bg-white'>
             <div className="container-fluid contact-content px-lg-5">
                 <div className='mb-5 mt-5 mt-lg-0'>
                     <h1 style={{ 'fontSize': '3rem' }} className='fw-bold text-center'>যোগাযোগ</h1>

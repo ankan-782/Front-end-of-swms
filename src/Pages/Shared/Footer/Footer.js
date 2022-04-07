@@ -173,7 +173,7 @@ const Footer = () => {
                                                 offset={0}
                                                 duration={500}
                                             >
-                                                আমাদের সম্পর্কে
+                                                ডেভেলপার সম্পর্কে
                                             </Link>
                                         </div>}
                                 </div>

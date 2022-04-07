@@ -62,9 +62,9 @@
 	transform: translate(-50%, -50%) scale(1);
 	letter-spacing: initial;
 }
-#navbar .nav-list ul li:hover a {
-	color: #50c458;
-}
+/* #navbar .nav-list ul li:hover a {
+	color: yellow;
+} */
 #navbar .hamburger {
 	height: 60px;
 	width: 60px;
@@ -127,16 +127,16 @@
     border-radius: 50%;
 }
 .nav-route {
-	color: yellow !important;
+	color: rgb(227, 255, 227) !important;
 	font-size: 1.5rem ;
 	font-weight: 500;
 	letter-spacing: 0.2rem;
 	background: none;
 	border: none;
 }
-.nav-route:hover {
-	color: #50c458 !important;
-}
+/* .nav-route:hover {
+	color: yellow !important;
+} */
 
 /* Keyframes */
 @keyframes hamburger_puls {

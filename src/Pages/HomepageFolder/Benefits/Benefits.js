@@ -5,7 +5,7 @@ import './Benefits.css';
 
 const Benefits = () => {
     return (
-        <div id='benefits' className='all-page-bg page-bg-white d-flex justify-content-center align-items-center'>
+        <div id='benefits' className='all-page-bg page-bg-white-odd d-flex justify-content-center align-items-center'>
             <div className='container benefits-content'>
                 <div className='mb-lg-5 mt-5 mt-lg-0'>
                     <h1 style={{ 'fontSize': '3rem' }} className='fw-bold text-center'>সুবিধাসমূহ</h1>

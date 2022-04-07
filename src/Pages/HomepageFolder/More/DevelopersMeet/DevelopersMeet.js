@@ -30,7 +30,7 @@ const DevelopersMeet = () => {
     };
 
     return (
-        <div id='developers' className='all-page-bg d-flex justify-content-center align-items-center page-bg-white'>
+        <div id='developers' className='all-page-bg page-bg-white-odd d-flex justify-content-center align-items-center page-bg-white'>
             <div className="container developers-content pb-5 pb-lg-0">
                 <div className='mb-5 mt-5 mt-lg-0'>
                     <h1 style={{ 'fontSize': '3rem' }} className='fw-bold text-center'>ডেভেলপার সম্পর্কে</h1>
