@@ -8,10 +8,10 @@ const Contact = () => {
                 <div className='mb-5 mt-5 mt-lg-0'>
                     <h1 style={{ 'fontSize': '3rem' }} className='fw-bold text-center'>যোগাযোগ</h1>
                 </div>
-                <div className="row mb-5 mb-lg-0">
-                    <div className="col-12 col-lg-7 d-lg-flex justify-content-between">
-                        <div className='mb-5 mb-lg-0 dhaka-north'>
-                            <h1 style={{ 'fontSize': '2rem' }} className="border-bottom border-3 border-dark mb-3">ঢাকা উত্তর সিটি কর্পোরেশন</h1>
+                <div className="row g-5 mb-5 mb-lg-0">
+                    <div className="col-12 col-md-6 col-lg-3">
+                        <div className='dhaka-north'>
+                            <h1 style={{ 'fontSize': '2rem' }} className="border-bottom border-3 border-dark mb-3 text-center">ঢাকা উত্তর সিটি কর্পোরেশন</h1>
                             <div className='mb-2'>
                                 <p style={{ 'color': '#50c458', 'fontSize': '1.2rem' }} className="m-0">টেলিফোন নম্বর</p>
                                 <p className='m-0'>৮৮ ০২-৫৫০৫২০৮৪</p>
@@ -36,10 +36,11 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        {/* <div style={{ 'margin': '0 0 auto 0' }} className="col-12 col-lg-4 d-flex justify-content-center align-items-center"> */}
-                        <div className='mb-5 mb-lg-0 dhaka-south'>
-                            <h1 style={{ 'fontSize': '2rem' }} className="border-bottom border-3 border-dark mb-3">ঢাকা দক্ষিন সিটি কর্পোরেশন</h1>
+                    <div className="col-12 col-md-6 col-lg-3">
+                        <div className='dhaka-south'>
+                            <h1 style={{ 'fontSize': '2rem' }} className="border-bottom border-3 border-dark mb-3 text-center">ঢাকা দক্ষিন সিটি কর্পোরেশন</h1>
                             <div className='mb-2'>
                                 <p style={{ 'color': '#50c458', 'fontSize': '1.2rem' }} className="m-0">টেলিফোন নম্বর</p>
                                 <p className='m-0'>০২২২৩৩৮৬০১৪</p>
@@ -63,10 +64,11 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* </div> */}
-                        {/* <div style={{ 'margin': '0 0 auto 0' }} className="col-12 col-lg-4 d-flex justify-content-center align-items-center"> */}
-                        <div className='mb-5 mb-lg-0 dhaka-swms'>
-                            <h1 style={{ 'fontSize': '2rem' }} className="border-bottom border-3 border-dark mb-3">SWMS অফিস</h1>
+                    </div>
+
+                    <div className="col-12 col-md-6 col-lg-3">
+                        <div className='dhaka-swms'>
+                            <h1 style={{ 'fontSize': '2rem' }} className="border-bottom border-3 border-dark mb-3 text-center">SWMS অফিস</h1>
                             <div className='mb-2'>
                                 <p style={{ 'color': '#50c458', 'fontSize': '1.2rem' }} className="m-0">টেলিফোন নম্বর</p>
                                 <p className='m-0'>+8801515220309</p>
@@ -93,11 +95,10 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* </div> */}
                     </div>
-                    <div className='col-12 col-lg-5'>
+                </div>
+                <div className='col-12 col-md-6 col-lg-3'>
 
-                    </div>
                 </div>
             </div>
         </div>

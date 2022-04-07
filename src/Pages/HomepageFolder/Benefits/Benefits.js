@@ -7,8 +7,8 @@ const Benefits = () => {
     return (
         <div id='benefits' className='all-page-bg page-bg-white d-flex justify-content-center align-items-center'>
             <div className='container benefits-content'>
-                <div className='mb-5 mt-5 mt-lg-0'>
-                    <h1 style={{ 'fontSize': '3rem' }} className='fw-bold text-center mb-5'>সুবিধাসমূহ</h1>
+                <div className='mb-lg-5 mt-5 mt-lg-0'>
+                    <h1 style={{ 'fontSize': '3rem' }} className='fw-bold text-center'>সুবিধাসমূহ</h1>
                 </div>
                 <div className="row mb-5 mb-lg-0">
                     <div className="col-12 col-lg-7">
