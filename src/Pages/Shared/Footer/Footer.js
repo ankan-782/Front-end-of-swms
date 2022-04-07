@@ -201,14 +201,14 @@ const Footer = () => {
                         <div >
                             <p className='d-lg-inline me-lg-4'>কপিরাইট © ২০২২</p>
                             <p className='d-lg-inline d-none me-lg-4'>|</p>
-                            <p className='d-lg-inline me-lg-4'><Link to='/' className='SWMS'>SWMS</Link></p>
+                            <NavLink to='/' className='d-lg-inline me-lg-4 SWMS'>SWMS</NavLink>
                             <p className='d-lg-inline d-none me-lg-4'>|</p>
                             <p className='d-lg-inline'>সমস্ত অধিকার সংরক্ষিত</p>
                         </div>
                         <div >
-                            <p className="d-lg-inline me-lg-3"><Link to="/terms" className='terms-condition-footer'>টার্মস অব ইউজ</Link></p>
-                            <p className="d-lg-inline me-lg-3"><Link to="/privacy" className='privacy-policy-footer'>প্রাইভেসি পলিসি</Link></p>
-                            <p className="d-lg-inline"><Link to="/cookie" className='cookie-policy-footer'>কুকি পলিসি</Link></p>
+                            <NavLink to="/terms" className='d-lg-inline me-lg-4 terms-condition-footer'>টার্মস অব ইউজ</NavLink>
+                            <NavLink to="/privacy" className='d-lg-inline me-lg-4 privacy-policy-footer'>প্রাইভেসি পলিসি</NavLink>
+                            <NavLink to="/cookie" className='d-lg-inline cookie-policy-footer'>কুকি পলিসি</NavLink>
                         </div>
                     </div>
                 </div>
