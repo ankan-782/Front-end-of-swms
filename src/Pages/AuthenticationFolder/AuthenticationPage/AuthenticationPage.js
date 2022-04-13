@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../Images/logo.png';
 import './AuthenticationPage.css';
 
 const AuthenticationPage = () => {
+
+    //removing user authentication state message
+    const [toast, setToast] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            if (localStorage.getItem('logout')) {
+                localStorage.removeItem('logout');
+                setToast(false);
+            }
+        }, 5000);
+    }, [toast]);
 
     return (
         <>
@@ -22,6 +33,13 @@ const AuthenticationPage = () => {
                     <p className='mb-2 text-warning text-start'>* নতুন ট্রাক ড্রাইভার ইউজার হিসেবে অ্যাপ্লাই করতে চান তাহলে ট্রাক ড্রাইভার বাটনে ক্লিক করে অ্যাপ্লাই বাটনে ক্লিক করুন |</p>
                     <p className='text-warning text-start'>* সাধারণ ইউজার হয়ে থাকেন তাহলে দয়ে করে এই পেজ থেকে চলে যান |</p>
                 </div> */}
+            </div>
+
+            {/* displaying user authentication state message */}
+            <div >
+                {(<div className={`${localStorage.getItem('logout') ? 'active-toast' : 'toast-container'} toast-bg`} style={{ 'zIndex': 11 }} role="alert">
+                    <p className='m-0'>সাইন আউট সফল হয়েছে</p>
+                </div>)}
             </div>
         </>
     );

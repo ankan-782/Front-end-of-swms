@@ -1,8 +1,6 @@
 import React from 'react';
 import withAuthentication from '../../../HOC/withAuthentication';
 import useAuthValues from '../../../Hooks/useAuthValues';
-import { Link } from 'react-router-dom';
-import logo from '../../../Images/logo.png';
 import './RegistrationForCityCorp.css';
 
 const RegistrationForCityCorp = (props) => {

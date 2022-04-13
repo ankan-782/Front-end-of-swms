@@ -19,10 +19,6 @@ const LandingPage = () => {
                 localStorage.removeItem('loggedIn');
                 setToast(false);
             }
-            else if (localStorage.getItem('signedUp')) {
-                localStorage.removeItem('signedUp');
-                setToast(false);
-            }
             else if (localStorage.getItem('logout')) {
                 localStorage.removeItem('logout');
                 setToast(false);
@@ -46,9 +42,6 @@ const LandingPage = () => {
             <div >
                 {(<div className={`${localStorage.getItem('loggedIn') ? 'active-toast' : 'toast-container'} toast-bg`} style={{ 'zIndex': 11 }} role="alert">
                     <p className='m-0'>সাইন ইন সফল হয়েছে</p>
-                </div>)}
-                {(<div className={`${localStorage.getItem('signedUp') ? 'active-toast' : 'toast-container'} toast-bg`} style={{ 'zIndex': 11 }} role="alert">
-                    <p className='m-0'>সাইন আপ সফল হয়েছে</p>
                 </div>)}
                 {(<div className={`${localStorage.getItem('logout') ? 'active-toast' : 'toast-container'} toast-bg`} style={{ 'zIndex': 11 }} role="alert">
                     <p className='m-0'>সাইন আউট সফল হয়েছে</p>

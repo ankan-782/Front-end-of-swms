@@ -13,6 +13,17 @@ const DashBoardLayout = () => {
     const [cityCorpUserById, setCityCorpUserById] = useState({});
     const [truckDriver, setTruckDriver] = useState({});
 
+    //removing user authentication state message
+    const [toast, setToast] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            if (localStorage.getItem('loggedIn')) {
+                localStorage.removeItem('loggedIn');
+                setToast(false);
+            }
+        }, 5000);
+    }, [toast]);
+
     useEffect(() => {
         if (localStorage.getItem('truckId')) {
             const truckDriverId = localStorage.getItem('truckId');
@@ -158,7 +169,7 @@ const DashBoardLayout = () => {
                             <li className="nav-item me-4 me-lg-5">
                                 <NavLink
                                     to="/"
-                                    className='nav-dashboard nav-link'
+                                    className='nav-dashboard'
                                 >
                                     হোম
                                 </NavLink>
@@ -166,7 +177,7 @@ const DashBoardLayout = () => {
                             <li className="nav-item me-4 me-lg-5">
                                 <NavLink
                                     to="/dashboard"
-                                    className='nav-dashboard nav-link'
+                                    className='nav-dashboard'
                                 >
                                     ড্যাশবোর্ড
                                 </NavLink>
@@ -174,13 +185,13 @@ const DashBoardLayout = () => {
                             <li className="nav-item me-2">
                                 {(user?.email || truckDriver?.nid) ? <div>
                                     {truckDriver?.nid ?
-                                        <p style={{ 'color': 'rgb(227, 255, 227)', 'cursor': 'pointer' }} onClick={logOutTruckDriver} className='nav-link nav-dashboard m-0'>সাইন আউট</p>
+                                        <p style={{ 'color': 'rgb(227, 255, 227)', 'cursor': 'pointer' }} onClick={logOutTruckDriver} className='m-0'>সাইন আউট</p>
                                         :
-                                        <p style={{ 'color': 'rgb(227, 255, 227)', 'cursor': 'pointer' }} onClick={logOutCityCorpUser} className='nav-link nav-dashboard m-0'>সাইন আউট</p>
+                                        <p style={{ 'color': 'rgb(227, 255, 227)', 'cursor': 'pointer' }} onClick={logOutCityCorpUser} className='m-0'>সাইন আউট</p>
                                     }
                                 </div> : <NavLink
                                     style={{ 'color': 'rgb(227, 255, 227)' }} to="/authentication"
-                                    className="nav-link nav-dashboard"
+                                    className="nav-dashboard"
                                 >
                                     সাইন ইন
                                 </NavLink>}
@@ -188,6 +199,12 @@ const DashBoardLayout = () => {
                         </ul>
                     </div>
                 </nav>
+            </div>
+
+            <div >
+                {(<div className={`${localStorage.getItem('loggedIn') ? 'active-toast' : 'toast-container'} toast-bg`} style={{ 'zIndex': 11 }} role="alert">
+                    <p className='m-0'>সাইন ইন সফল হয়েছে</p>
+                </div>)}
             </div>
 
             <div>

@@ -51,6 +51,7 @@ code {
   border: none;
   transition: 0.3s ease-in-out;
 }
+
 .button-for-black-bg:hover {
   background-color: rgb(137, 255, 143);
   color: black;
@@ -67,6 +68,7 @@ code {
   border: none;
   transition: 0.3s ease-in-out;
 }
+
 .button-for-white-bg:hover {
   background-color: rgb(137, 255, 143);
   color: black;
@@ -95,6 +97,7 @@ code {
 .form {
   width: 80%;
 }
+
 .form-btn {
   width: 100%;
   background-color: #50c458;
@@ -103,6 +106,7 @@ code {
   text-transform: uppercase;
   transition: 0.3s;
 }
+
 .form-btn:hover {
   background-color: rgb(137, 255, 143);
 }
@@ -120,10 +124,31 @@ code {
   }
 }
 
-@media screen and (min-width: 576px) and (max-width: 991.98px){
+@media screen and (min-width: 576px) and (max-width: 991.98px) {
   .spinner {
     width: 60%;
   }
+}
+
+/* toast message user-authentication-state all page */
+.toast-container {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  overflow: hidden;
+}
+
+.active-toast {
+  opacity: 1;
+}
+
+.toast-bg {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  color: black;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #50c458;
 }
 
 

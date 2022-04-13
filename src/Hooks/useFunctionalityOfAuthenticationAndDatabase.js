@@ -34,7 +34,7 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
             setIsLoading(false);
         });
         return () => unsubscribe;
-    }, []);
+    }, [auth]);
 
 
     // Sign in or login for city corporation
@@ -170,9 +170,11 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
     const logOutCityCorpUser = () => {
         setIsLoading(true);
         localStorage.removeItem('cityId');
+        localStorage.setItem('logout', '2');
         signOut(auth)
             .then(() => {
                 // Sign-out successful.
+                window.location.reload();
             }).catch((error) => {
                 setError(error.message);
             })
