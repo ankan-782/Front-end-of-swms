@@ -26,8 +26,8 @@ const LoginForTruckDriver = (props) => {
                         <div className='mb-4'>
                             <input title='এন আই ডি নাম্বার' name="username" onChange={handleOnChange} onFocus={() => setInputActive('username')} onBlur={() => setInputActive('')} onClick={() => { setError(''); setBackendError('') }} type="text" className={`${inputActive === 'username' && "inputActive"} input-bg border-0 p-3`} placeholder="এন আই ডি নাম্বার" autoComplete="on" required />
                         </div>
-                        <div className='mb-5 password-field'>
-                            
+                        <div className='mb-5 password-field-login-truck'>
+
                             <input
                                 title='পিন নাম্বার'
                                 name="password"
@@ -45,17 +45,9 @@ const LoginForTruckDriver = (props) => {
                                 required
                             />
                             {showPassword ?
-                                <i
-                                    onClick={showHideTogglePassword}
-                                    className="fa-solid fa-eye-slash show-hide-toggle"
-                                >
-
-                                </i> :
-                                <i
-                                    onClick={showHideTogglePassword}
-                                    className="fa-solid fa-eye show-hide-toggle"
-                                >
-                                </i>}
+                                <i onClick={showHideTogglePassword} className="fa-solid fa-eye-slash show-hide-toggle"></i>
+                                :
+                                <i onClick={showHideTogglePassword} className="fa-solid fa-eye show-hide-toggle"></i>}
 
                         </div>
                         <button type='submit' className='form-btn p-3 fw-bold'>সাইন ইন</button>

@@ -27,7 +27,8 @@ const BinFillingStatus = () => {
                         <div>
                             {fillPercentageValue === 0 && <h2>ডাম্প স্টেশন খালি পরে আছে</h2>}
                             {(fillPercentageValue > 0 && fillPercentageValue <= 30) && <h2>ডাম্প স্টেশনে ময়লা জমা শুরু হয়েছে</h2>}
-                            {(fillPercentageValue > 30 && fillPercentageValue <= 50) && <h2>ডাম্প স্টেশনে ময়লা অর্ধেকের কাছাকাছি পূর্ণ হতে চলেছে</h2>}
+                            {(fillPercentageValue > 30 && fillPercentageValue < 50) && <h2>ডাম্প স্টেশনে ময়লা অর্ধেকের কাছাকাছি পূর্ণ হতে চলেছে</h2>}
+                            {(fillPercentageValue === 50) && <h2>ডাম্প স্টেশনে ময়লা অর্ধেক পূর্ণ হয়েছে</h2>}
                             {(fillPercentageValue > 50 && fillPercentageValue <= 70) && <h2>আপনার পূর্বনির্ধারিত ডাম্প স্টেশন থেকে ময়লা তোলার জন্যে প্রস্তুত হয়ে যান</h2>}
                             {(fillPercentageValue > 70 && fillPercentageValue < 100) && <h2>আপনি তারাতারি ময়লা তোলার জন্যে নির্ধারিত ডাম্প স্টেশন এ চলে যান</h2>}
                             {fillPercentageValue === 100 && <h2>দয়া করে ডাম্প স্টেশন থেকে ময়লা সরিয়ে ফেলুন</h2>}

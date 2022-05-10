@@ -6,7 +6,7 @@
     width: 20%;
     margin: 0 auto;
 }
-.password-field {
+.password-field-registration-city {
     position: relative;
 }
 .show-hide-toggle {
@@ -14,6 +14,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
+    z-index: 1;
 }
 .reset-pass {
     text-decoration: none;

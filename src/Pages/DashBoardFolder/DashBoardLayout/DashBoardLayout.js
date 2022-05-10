@@ -124,7 +124,7 @@ const DashBoardLayout = () => {
                     </div>
                     <div>
                         <div className="sign-in-link">
-                            {(user?.email || truckDriver?.nid) ? <div className="dropup d-flex align-items-center">
+                            {(user?.email || truckDriver?.nid) ? <div className="dropup d-flex align-items-center w-75">
                                 <div className='d-flex align-items-center'>
                                     {cityCorpUserById?.photo || truckDriver?.photo ? <img src={`data:image/png;base64,${cityCorpUserById?.photo || truckDriver?.photo}`} className="user-img-dashboard-1 me-3" alt="" /> : <img src={avatar} title="ইউজারের ছবি দেওয়া হয়নি" alt="" className="user-img-dashboard-1 me-3" />}
                                     {(user?.email || truckDriver?.nid) && <p style={{ 'color': 'rgb(227, 255, 227)' }} className="nav-text text-center fs-5 mb-0 ">{user?.displayName || truckDriver?.displayName}</p>}
@@ -183,18 +183,11 @@ const DashBoardLayout = () => {
                                 </NavLink>
                             </li>
                             <li className="nav-item me-2">
-                                {(user?.email || truckDriver?.nid) ? <div>
-                                    {truckDriver?.nid ?
-                                        <p style={{ 'color': 'rgb(227, 255, 227)', 'cursor': 'pointer' }} onClick={logOutTruckDriver} className='m-0'>সাইন আউট</p>
-                                        :
-                                        <p style={{ 'color': 'rgb(227, 255, 227)', 'cursor': 'pointer' }} onClick={logOutCityCorpUser} className='m-0'>সাইন আউট</p>
-                                    }
-                                </div> : <NavLink
-                                    style={{ 'color': 'rgb(227, 255, 227)' }} to="/authentication"
-                                    className="nav-dashboard"
-                                >
-                                    সাইন ইন
-                                </NavLink>}
+                                {truckDriver?.nid ?
+                                    <p style={{ 'color': 'rgb(227, 255, 227)', 'cursor': 'pointer' }} onClick={logOutTruckDriver} className='m-0'>সাইন আউট</p>
+                                    :
+                                    <p style={{ 'color': 'rgb(227, 255, 227)', 'cursor': 'pointer' }} onClick={logOutCityCorpUser} className='m-0'>সাইন আউট</p>
+                                }
                             </li>
                         </ul>
                     </div>
