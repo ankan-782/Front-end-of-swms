@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link as NavLink, Outlet } from 'react-router-dom';
+import { Link as NavLink, Route, Routes } from 'react-router-dom';
 import useAuthValues from '../../../Hooks/useAuthValues';
 import logo from '../../../Images/logo.png';
 import avatar from '../../../Images/avatar.jpg';
+import DashBoardPage from '../DashBoardPage/DashBoardPage';
+import BinFillingStatus from '../BinFillingStatus/BinFillingStatus';
+import RegistrationForTruckDriver from '../RegistrationForTruckDriver/RegistrationForTruckDriver';
+import RegistrationForCityCorp from '../RegistrationForCityCorp/RegistrationForCityCorp';
 import './DashBoardLayout.css';
 
 const DashBoardLayout = () => {
@@ -27,13 +31,13 @@ const DashBoardLayout = () => {
     useEffect(() => {
         if (localStorage.getItem('truckId')) {
             const truckDriverId = localStorage.getItem('truckId');
-            fetch(`https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers/${truckDriverId}`)
+            fetch(`http://localhost:5000/truckDriverUsers/${truckDriverId}`)
                 .then(res => res.json())
                 .then(data => setTruckDriver(data));
         }
         else if (localStorage.getItem('cityId')) {
             const cityCorpUserId = localStorage.getItem('cityId');
-            fetch(`https://enigmatic-tundra-42778.herokuapp.com/cityCorporationUsers/${cityCorpUserId}`)
+            fetch(`http://localhost:5000/cityCorporationUsers/${cityCorpUserId}`)
                 .then(res => res.json())
                 .then(data => setCityCorpUserById(data));
         }
@@ -201,7 +205,12 @@ const DashBoardLayout = () => {
             </div>
 
             <div>
-                <Outlet />
+                <Routes>
+                    <Route index element={localStorage.getItem('cityId') ? <DashBoardPage /> : <BinFillingStatus />} />
+                    <Route path='binStatus' element={<BinFillingStatus />} />
+                    <Route path='registrationForTruckDriver' element={<RegistrationForTruckDriver />} />
+                    <Route path='registrationForCityCorp' element={<RegistrationForCityCorp />} />
+                </Routes>
             </div>
         </>
     );

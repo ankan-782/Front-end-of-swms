@@ -8,13 +8,13 @@ const useAuthenticationUsersInfos = () => {
     const { token } = useAuthValues();
 
     useEffect(() => {
-        fetch('https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers')
+        fetch('http://localhost:5000/truckDriverUsers')
             .then(res => res.json())
             .then(data => setTruckDriverInfos(data));
     }, [])
 
     useEffect(() => {
-        fetch('https://enigmatic-tundra-42778.herokuapp.com/cityCorporationUsers')
+        fetch('http://localhost:5000/cityCorporationUsers')
             .then(res => res.json())
             .then(data => setCityCorpUserInfos(data));
     }, [])

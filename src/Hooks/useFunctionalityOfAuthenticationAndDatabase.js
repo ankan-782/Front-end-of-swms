@@ -60,7 +60,7 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
     // Sign in or login for truck driver user
     const loginProcessForTruckDriver = (nid, pin, location, navigate) => {
         setIsLoading(true);
-        fetch(`https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers/details/${nid}`)
+        fetch(`http://localhost:5000/truckDriverUsers/details/${nid}`)
             .then(res => res.json())
             .then(data => {
                 if (data?.pin) {
@@ -143,7 +143,7 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
         formData.append('address', truckDriverUserInfos.address);
         formData.append('photo', photo);
 
-        fetch('https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers', {
+        fetch('http://localhost:5000/truckDriverUsers', {
             method: 'POST',
             body: formData,
         })
@@ -197,7 +197,7 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
         formData.append('email', email);
         formData.append('photo', photo);
 
-        fetch('https://enigmatic-tundra-42778.herokuapp.com/cityCorporationUsers', {
+        fetch('http://localhost:5000/cityCorporationUsers', {
             method: method,
             body: formData
         })
@@ -217,7 +217,7 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
 
     //load specific city corp user for displaying photo when login
     const loadSpecificCityCorpUser = (email) => {
-        fetch(`https://enigmatic-tundra-42778.herokuapp.com/cityCorporationUsers/searchByEmail/${email}`)
+        fetch(`http://localhost:5000/cityCorporationUsers/searchByEmail/${email}`)
             .then(res => res.json())
             .then(data => {
                 if (data.message) {

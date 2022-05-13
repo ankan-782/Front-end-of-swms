@@ -23,13 +23,13 @@ const Navbar = () => {
     useEffect(() => {
         if (localStorage.getItem('truckId')) {
             const truckDriverId = localStorage.getItem('truckId');
-            fetch(`https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers/${truckDriverId}`)
+            fetch(`http://localhost:5000/truckDriverUsers/${truckDriverId}`)
                 .then(res => res.json())
                 .then(data => setTruckDriver(data));
         }
         else if (localStorage.getItem('cityId')) {
             const cityCorpUserId = localStorage.getItem('cityId');
-            fetch(`https://enigmatic-tundra-42778.herokuapp.com/cityCorporationUsers/${cityCorpUserId}`)
+            fetch(`http://localhost:5000/cityCorporationUsers/${cityCorpUserId}`)
                 .then(res => res.json())
                 .then(data => setCityCorpUserById(data));
         }

@@ -6,7 +6,7 @@ const useCityCorpUser = () => {
     useEffect(() => {
         if (localStorage.getItem('cityId')) {
             const cityCorpUserId = localStorage.getItem('cityId');
-            fetch(`https://enigmatic-tundra-42778.herokuapp.com/cityCorporationUsers/${cityCorpUserId}`)
+            fetch(`http://localhost:5000/cityCorporationUsers/${cityCorpUserId}`)
                 .then(res => res.json())
                 .then(data => setCityCorpUser(data));
         }
