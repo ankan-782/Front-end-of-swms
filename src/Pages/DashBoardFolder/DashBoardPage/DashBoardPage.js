@@ -20,7 +20,6 @@ const DashBoardPage = () => {
                             className={`${inputActive === 'search' && "inputActive"} input-bg border-0 p-3 mb-4`}
                             placeholder="সার্চ করুন"
                             autoComplete="on"
-                            required
                         />
                     </div>
                     <div className='date-field-dashboard'>
@@ -40,7 +39,6 @@ const DashBoardPage = () => {
                             className={`${inputActive === 'date' && "inputActive"} input-bg border-0 p-3 mb-4`}
                             placeholder="তারিখ বাছাই করুন"
                             autoComplete="on"
-                            required
                         />
                     </div>
                 </div>

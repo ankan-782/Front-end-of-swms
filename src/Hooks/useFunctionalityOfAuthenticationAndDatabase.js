@@ -1,5 +1,5 @@
 import initializeAuthentication from '../FirebaseConfig/firebase.init';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, getIdToken } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, getIdToken } from 'firebase/auth';
 import { getDatabase, ref, child, get } from "firebase/database";
 import { useEffect, useState } from 'react';
 
@@ -9,6 +9,7 @@ initializeAuthentication();
 const useFunctionalityOfAuthenticationAndDatabase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
     const [backendError, setBackendError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [token, setToken] = useState('');
@@ -90,7 +91,7 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
     }
 
     // Sign up or Registration for city corporation
-    const registrationProcessForCityCorp = (email, password, name, photo, navigate) => {
+    const registrationProcessForCityCorp = (email, password, name, photo) => {
         setIsLoading(true);
         //save city corporation user to the database
         saveCityCorporationUser(email, name, photo, 'POST');
@@ -99,22 +100,12 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
             .then((result) => {
                 // alert('successfully registered');
                 setError('');
+                setSuccess('এডমিন ইউজার সংযুক্তি সফল হয়েছে');
 
                 //save user by email & name immediately when user creation
                 const newCityCorporationUser = { email: email, displayName: name };
                 setUser(newCityCorporationUser);
 
-                // send name and photo to firebase after creation
-                updateProfile(auth.currentUser, {
-                    displayName: name,
-                }).then(() => {
-                    // Profile updated!
-                    // ...
-                }).catch((error) => {
-                    setError(error.message);
-                });
-
-                navigate('/');
             })
             .catch((error) => {
                 if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
@@ -129,7 +120,7 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
 
 
     // Sign up or Registration for truck drivers
-    const registrationProcessForTruckDriver = (truckDriverUserInfos, photo, navigate) => {
+    const registrationProcessForTruckDriver = (truckDriverUserInfos, photo) => {
         setIsLoading(true);
 
         const formData = new FormData();
@@ -153,10 +144,10 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
                     setError(data.message);
                 }
                 else if (data.insertedId) {
-                    localStorage.setItem('truckId', data.insertedId);
-                    localStorage.setItem('signedUp', data.insertedId);
+                    // localStorage.setItem('truckId', data.insertedId);
+                    // localStorage.setItem('signedUp', data.insertedId);
                     // alert('successfully registered');
-                    navigate('/');
+                    setSuccess('নতুন ড্রাইভার সংযুক্তি সফল হয়েছে');
                 }
             })
             .catch((error) => {
@@ -273,6 +264,8 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
         setError,
         backendError,
         setBackendError,
+        success,
+        setSuccess,
         isLoading,
         setIsLoading,
         registrationProcessForCityCorp,

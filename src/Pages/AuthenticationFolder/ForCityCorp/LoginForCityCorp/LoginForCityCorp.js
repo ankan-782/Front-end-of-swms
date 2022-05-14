@@ -23,7 +23,21 @@ const LoginForCityCorp = (props) => {
                 <div className='form-portion'>
                     <form onSubmit={handleLoginForCityCorp} className="form mx-auto mb-4">
                         <div className='mb-4'>
-                            <input title='আপনার ইমেইল আইডি' name='email' onChange={handleOnChange} onFocus={() => setInputActive('email')} onBlur={() => setInputActive('')} onClick={() => { setError(''); setBackendError('') }} type="email" className={`${inputActive === 'email' && "inputActive"} input-bg border-0 p-3`} placeholder="আপনার ইমেইল আইডি" autoComplete="on" required />
+                            <input
+                                title='আপনার ইমেইল আইডি'
+                                name='email'
+                                onChange={handleOnChange}
+                                onFocus={() => setInputActive('email')}
+                                onBlur={() => setInputActive('')}
+                                onClick={() => {
+                                    setError('');
+                                    setBackendError('')
+                                }} type="email"
+                                className={`${inputActive === 'email' && "inputActive"} input-bg border-0 p-3`}
+                                placeholder="আপনার ইমেইল আইডি"
+                                autoComplete="on"
+                                required
+                            />
                         </div>
                         <div className='mb-5 password-field-login-city'>
                             <input

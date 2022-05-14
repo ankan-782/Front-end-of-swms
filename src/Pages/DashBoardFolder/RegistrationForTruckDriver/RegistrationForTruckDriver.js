@@ -4,20 +4,20 @@ import useAuthValues from '../../../Hooks/useAuthValues';
 import './RegistrationForTruckDriver.css';
 
 const RegistrationForTruckDriver = (props) => {
-    const { inputActive, setInputActive, handleOnChange, handleOnPhotoUpload, inputFieldInfos, photo, pinNumberState, navigate } = props;
+    const { inputActive, setInputActive, handleOnChange, handleOnPhotoUpload, inputFieldInfos, photo, pinNumberState } = props;
 
-    const { registrationProcessForTruckDriver, error, setError } = useAuthValues();
+    const { registrationProcessForTruckDriver, error, setError, setSuccess, success } = useAuthValues();
 
     const handleRegistrationForTruckDriver = e => {
         e.preventDefault();
         if (!photo) {
-            setError('User Photo must needed');
+            setError('ড্রাইভার এর ফটো অবশ্যই দিতে হবে');
         }
         if (!pinNumberState) {
-            setError('PIN number digits is exceeding. Maximum is 4');
+            setError('পিন নাম্বার ৪ ডিজিট এর বেশি হবে না');
         }
         else if (!error && pinNumberState) {
-            registrationProcessForTruckDriver(inputFieldInfos, photo, navigate);
+            registrationProcessForTruckDriver(inputFieldInfos, photo);
         }
     }
 
@@ -37,7 +37,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onChange={handleOnChange}
                                         onFocus={() => setInputActive('name')}
                                         onBlur={() => setInputActive('')}
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         type="text"
                                         className={`${inputActive === 'name' && "inputActive"} border-0 p-3 input-bg`}
                                         placeholder="আপনার নাম"
@@ -51,6 +54,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onChange={handleOnChange}
                                         onFocus={() => setInputActive('age')}
                                         onBlur={() => setInputActive('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         type="number"
                                         min="22"
                                         max="60"
@@ -65,7 +72,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onChange={handleOnChange}
                                         onFocus={() => setInputActive('gender')}
                                         onBlur={() => setInputActive('')}
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         type="text"
                                         className={`${inputActive === 'gender' && "inputActive"} border-0 p-3 input-bg form-select`}
                                         required
@@ -85,7 +95,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onBlur={() => setInputActive('')}
                                         type="file"
                                         accept='image/*'
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         className={`${inputActive === 'file' && "inputActive"} input-bg border-0 p-3`}
                                         placeholder="আপনার ছবি সিলেক্ট করুন"
                                         autoComplete="on" />
@@ -96,7 +109,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onChange={handleOnChange}
                                         onFocus={() => setInputActive('phone')}
                                         onBlur={() => setInputActive('')}
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         type="text" className={`${inputActive === 'phone' && "inputActive"} border-0 p-3 input-bg`}
                                         placeholder="ফোন নাম্বার"
                                         autoComplete="on"
@@ -109,7 +125,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onChange={handleOnChange}
                                         onFocus={() => setInputActive('pin')}
                                         onBlur={() => setInputActive('')}
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         type="number"
                                         className={`${inputActive === 'pin' && "inputActive"} border-0 p-3 input-bg`}
                                         placeholder="পিন নাম্বার"
@@ -127,7 +146,10 @@ const RegistrationForTruckDriver = (props) => {
                                                 onChange={handleOnChange}
                                                 onFocus={() => setInputActive('nid')}
                                                 onBlur={() => setInputActive('')}
-                                                onClick={() => setError('')}
+                                                onClick={() => {
+                                                    setError('');
+                                                    setSuccess('');
+                                                }}
                                                 type="text"
                                                 className={`${inputActive === 'nid' && "inputActive"} border-0 p-3 input-bg`}
                                                 placeholder="এন আই ডি নাম্বার"
@@ -138,10 +160,14 @@ const RegistrationForTruckDriver = (props) => {
                                         <div>
                                             <input
                                                 title='রাইভিং লাইসেন্স নাম্বার'
-                                                name="dln" onChange={handleOnChange}
+                                                name="dln"
+                                                onChange={handleOnChange}
                                                 onFocus={() => setInputActive('dln')}
                                                 onBlur={() => setInputActive('')}
-                                                onClick={() => setError('')}
+                                                onClick={() => {
+                                                    setError('');
+                                                    setSuccess('');
+                                                }}
                                                 type="text"
                                                 className={`${inputActive === 'dln' && "inputActive"} border-0 p-3 input-bg`}
                                                 placeholder="ড্রাইভিং লাইসেন্স নাম্বার"
@@ -157,7 +183,10 @@ const RegistrationForTruckDriver = (props) => {
                                             name="address"
                                             onChange={handleOnChange}
                                             onFocus={() => setInputActive('address')}
-                                            onClick={() => setError('')}
+                                            onClick={() => {
+                                                setError('');
+                                                setSuccess('');
+                                            }}
                                             onBlur={() => setInputActive('')}
                                             type="text"
                                             className={`${inputActive === 'address' && "inputActive"} border-0 p-3 input-bg`}
@@ -170,6 +199,7 @@ const RegistrationForTruckDriver = (props) => {
                                 <button type='submit' className='form-btn p-3 fw-bold'>সাইন আপ</button>
                             </form>
                             {error && <p className='text-danger fw-bold text-center'>{error}</p>}
+                            {success && <p className='text-success fw-bold text-center'>{success}</p>}
                         </div>
                     </div>
                 </div>
@@ -189,7 +219,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onChange={handleOnChange}
                                         onFocus={() => setInputActive('name')}
                                         onBlur={() => setInputActive('')}
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         type="text"
                                         className={`${inputActive === 'name' && "inputActive"} border-0 p-3 input-bg`}
                                         placeholder="আপনার নাম"
@@ -204,7 +237,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onChange={handleOnChange}
                                         onFocus={() => setInputActive('age')}
                                         onBlur={() => setInputActive('')}
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         type="number"
                                         min="22"
                                         max="60"
@@ -221,7 +257,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onChange={handleOnChange}
                                         onFocus={() => setInputActive('gender')}
                                         onBlur={() => setInputActive('')}
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         type="text"
                                         className={`${inputActive === 'gender' && "inputActive"} border-0 p-3 input-bg form-select`}
                                         required
@@ -239,7 +278,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onFocus={() => setInputActive('file')}
                                         onBlur={() => setInputActive('')}
                                         type="file" accept='image/*'
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         className={`${inputActive === 'file' && "inputActive"} input-bg border-0 p-3`}
                                         placeholder="আপনার ছবি সিলেক্ট করুন"
                                         autoComplete="on"
@@ -252,7 +294,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onChange={handleOnChange}
                                         onFocus={() => setInputActive('phone')}
                                         onBlur={() => setInputActive('')}
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         type="text"
                                         className={`${inputActive === 'phone' && "inputActive"} border-0 p-3 input-bg`}
                                         placeholder="ফোন নাম্বার"
@@ -267,7 +312,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onChange={handleOnChange}
                                         onFocus={() => setInputActive('pin')}
                                         onBlur={() => setInputActive('')}
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         type="number"
                                         className={`${inputActive === 'pin' && "inputActive"} border-0 p-3 input-bg`}
                                         placeholder="পিন নাম্বার"
@@ -282,7 +330,10 @@ const RegistrationForTruckDriver = (props) => {
                                         onChange={handleOnChange}
                                         onFocus={() => setInputActive('nid')}
                                         onBlur={() => setInputActive('')}
-                                        onClick={() => setError('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
                                         type="text"
                                         className={`${inputActive === 'nid' && "inputActive"} border-0 p-3 input-bg`}
                                         placeholder="এন আই ডি নাম্বার"
@@ -291,32 +342,46 @@ const RegistrationForTruckDriver = (props) => {
                                     />
                                 </div>
                                 <div className='mb-4'>
-                                    <input 
-                                    title='ড্রাইভিং লাইসেন্স নাম্বার' 
-                                    name="dln" 
-                                    onChange={handleOnChange} 
-                                    onFocus={() => setInputActive('dln')} 
-                                    onBlur={() => setInputActive('')} 
-                                    onClick={() => setError('')} 
-                                    type="text" 
-                                    className={`${inputActive === 'dln' && "inputActive"} border-0 p-3 input-bg`} 
-                                    placeholder="ড্রাইভিং লাইসেন্স নাম্বার" 
-                                    autoComplete="on" required />
+                                    <input
+                                        title='ড্রাইভিং লাইসেন্স নাম্বার'
+                                        name="dln"
+                                        onChange={handleOnChange}
+                                        onFocus={() => setInputActive('dln')}
+                                        onBlur={() => setInputActive('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
+                                        type="text"
+                                        className={`${inputActive === 'dln' && "inputActive"} border-0 p-3 input-bg`}
+                                        placeholder="ড্রাইভিং লাইসেন্স নাম্বার"
+                                        autoComplete="on"
+                                        required
+                                    />
                                 </div>
                                 <div className='mb-5'>
-                                    <textarea 
-                                    title='ঠিকানা' 
-                                    style={{ 'height': '130px' }} 
-                                    name="address" 
-                                    onChange={handleOnChange} 
-                                    onFocus={() => setInputActive('address')} 
-                                    onClick={() => setError('')} 
-                                    onBlur={() => setInputActive('')} 
-                                    type="text" className={`${inputActive === 'address' && "inputActive"} border-0 p-3 input-bg`} placeholder="ঠিকানা" autoComplete="on" required />
+                                    <textarea
+                                        title='ঠিকানা'
+                                        style={{ 'height': '130px' }}
+                                        name="address"
+                                        onChange={handleOnChange}
+                                        onFocus={() => setInputActive('address')}
+                                        onBlur={() => setInputActive('')}
+                                        onClick={() => {
+                                            setError('');
+                                            setSuccess('');
+                                        }}
+                                        type="text"
+                                        className={`${inputActive === 'address' && "inputActive"} border-0 p-3 input-bg`}
+                                        placeholder="ঠিকানা"
+                                        autoComplete="on"
+                                        required
+                                    />
                                 </div>
                                 <button type='submit' className='form-btn p-3'>সাইন আপ</button>
                             </form>
                             {error && <p className='text-danger text-center'>{error}</p>}
+                            {success && <p className='text-success text-center'>{success}</p>}
                         </div>
                     </div>
                 </div>

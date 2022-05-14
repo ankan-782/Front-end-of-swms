@@ -1,0 +1,75 @@
+.list-of-truck-driver-content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.driver-info {
+    border: 1px solid rgb(121, 173, 121);
+    border-radius: 10px;
+    /* z-index: -1; */
+}
+
+.driver-nid {
+    background-color: #50c458;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+
+.driver-photo {
+    border: 2px solid rgb(121, 173, 121);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.search-field {
+    width: 100%;
+}
+
+.search-icon {
+    border: none;
+    background-color: #50c458;
+    padding: 0 12px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.search-icon:hover {
+    background-color: #6de775;
+}
+
+.update-icon {
+    border: none;
+    background-color: #50c458;
+    padding: 6px 10px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.update-icon:hover {
+    background-color: #6de775;
+}
+
+.delete-icon {
+    border: none;
+    background-color: #e13737;
+    padding: 6px 10px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.delete-icon:hover {
+    background-color: #ec5d5d;
+}
+
+@media screen and (min-width: 576px) and (max-width: 1399.98px) {
+    .search-field {
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .search-field {
+        width: 50%;
+    }
+}

@@ -7,6 +7,8 @@ import DashBoardPage from '../DashBoardPage/DashBoardPage';
 import BinFillingStatus from '../BinFillingStatus/BinFillingStatus';
 import RegistrationForTruckDriver from '../RegistrationForTruckDriver/RegistrationForTruckDriver';
 import RegistrationForCityCorp from '../RegistrationForCityCorp/RegistrationForCityCorp';
+import DestinationArea from '../DestinationArea/DestinationArea';
+import TruckDriversList from '../TruckDriversList/TruckDriversList';
 import './DashBoardLayout.css';
 
 const DashBoardLayout = () => {
@@ -103,7 +105,7 @@ const DashBoardLayout = () => {
                         </div>}
                         {localStorage.getItem('cityId') && <div className="mb-3">
                             <NavLink
-                                to='/dashboard/destination'
+                                to='/dashboard/destinationArea'
                                 onClick={() => {
                                     setNavLinkActive('destination')
                                 }}
@@ -210,6 +212,8 @@ const DashBoardLayout = () => {
                     <Route path='binStatus' element={<BinFillingStatus />} />
                     <Route path='registrationForTruckDriver' element={<RegistrationForTruckDriver />} />
                     <Route path='registrationForCityCorp' element={<RegistrationForCityCorp />} />
+                    <Route path='destinationArea' element={<DestinationArea />} />
+                    <Route path='listOfTruckDrivers' element={<TruckDriversList />} />
                 </Routes>
             </div>
         </>

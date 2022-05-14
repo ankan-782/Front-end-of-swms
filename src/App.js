@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path='' element={<LandingPage />} />
         <Route path='home' element={<LandingPage />} />
-        <Route path='dashboard' element={<PrivateRoute><DashBoardLayout /></PrivateRoute>} />
+        <Route path='dashboard/*' element={<PrivateRoute><DashBoardLayout /></PrivateRoute>} />
         <Route path='authentication' element={<AuthenticationRoute><AuthenticationLayout /></AuthenticationRoute>} >
           <Route index element={<AuthenticationPage />} />
           <Route path='loginForTruckDriver' element={<LoginForTruckDriver />} />
