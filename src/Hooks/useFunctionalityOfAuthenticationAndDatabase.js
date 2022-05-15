@@ -61,7 +61,7 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
     // Sign in or login for truck driver user
     const loginProcessForTruckDriver = (nid, pin, location, navigate) => {
         setIsLoading(true);
-        fetch(`http://localhost:5000/truckDriverUsers/details/${nid}`)
+        fetch(`http://localhost:5000/truckDriverUsers/storeAndUpdateInfo/${nid}`)
             .then(res => res.json())
             .then(data => {
                 if (data?.pin) {

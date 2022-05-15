@@ -196,7 +196,7 @@ const RegistrationForTruckDriver = (props) => {
                                         />
                                     </div>
                                 </div>
-                                <button type='submit' className='form-btn p-3 fw-bold'>সাইন আপ</button>
+                                <button type='submit' className='form-btn p-3 fw-bold'>রেজিস্টার করুন</button>
                             </form>
                             {error && <p className='text-danger fw-bold text-center'>{error}</p>}
                             {success && <p className='text-success fw-bold text-center'>{success}</p>}

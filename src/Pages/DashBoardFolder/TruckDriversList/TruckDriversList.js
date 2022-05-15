@@ -16,12 +16,6 @@ const TruckDriversList = () => {
 
     const { error, setError, setSuccess, success } = useAuthValues();
 
-    // load all drivers in driver list page
-    useEffect(() => {
-        fetch('http://localhost:5000/truckDriverUsers')
-            .then(res => res.json())
-            .then(data => setLoadDrivers(data));
-    }, [toggleSearch]);
 
     // search specific driver by nid
     const handleSearchFieldOnChange = (e) => {
@@ -42,9 +36,16 @@ const TruckDriversList = () => {
         }
     }
 
+    // load all drivers in driver list page
+    useEffect(() => {
+        fetch('http://localhost:5000/truckDriverUsers')
+            .then(res => res.json())
+            .then(data => setLoadDrivers(data));
+    }, [toggleSearch]);
+
     // load specific driver for updatation
     const loadSpecificDriver = (nid) => {
-        fetch(`http://localhost:5000/truckDriverUsers/details/${nid}`)
+        fetch(`http://localhost:5000/truckDriverUsers/storeAndUpdateInfo/${nid}`)
             .then(res => res.json())
             .then(data => setSpecificDriverInfo(data));
     }
@@ -132,7 +133,7 @@ const TruckDriversList = () => {
             formData.append('address', specificDriverInfo.address);
             formData.append('photo', photo);
 
-            fetch(`http://localhost:5000/truckDriverUsers/details/${specificDriverInfo.nid}`, {
+            fetch(`http://localhost:5000/truckDriverUsers/storeAndUpdateInfo/${specificDriverInfo.nid}`, {
                 method: 'PUT',
                 body: formData
             })
@@ -150,7 +151,7 @@ const TruckDriversList = () => {
     const handleDeleteDriver = nid => {
         const proceed = window.confirm('এই ড্রাইভার এর তথ্য মুছে ফেলতে কি আপনি নিশ্চিত ?');
         if (proceed) {
-            fetch(`http://localhost:5000/truckDriverUsers/details/${nid}`, {
+            fetch(`http://localhost:5000/truckDriverUsers/storeAndUpdateInfo/${nid}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -204,15 +205,17 @@ const TruckDriversList = () => {
                                                         <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                             <div className="modal-content">
                                                                 <div className="modal-header">
-                                                                    <h5 className="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                                                    <h5 className="modal-title" id="staticBackdropLabel">NID: {driver.nid}</h5>
                                                                     <button onClick={() => window.location.reload()} type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div className="modal-body">
                                                                     <div className="form-portion">
                                                                         <form onSubmit={handleUpdateDriver}>
-                                                                            <div className='mb-4'>
+                                                                            <div className='mb-3'>
+                                                                                <label htmlFor="name" className='mb-2 ms-1'>ড্রাইভার এর নাম</label>
                                                                                 <input
-                                                                                    title='আপনার নাম'
+                                                                                    id='name'
+                                                                                    title='ড্রাইভার এর নাম'
                                                                                     name="name"
                                                                                     value={specificDriverInfo.displayName || ''}
                                                                                     onChange={handleNameOnChange}
@@ -224,13 +227,15 @@ const TruckDriversList = () => {
                                                                                     }}
                                                                                     type="text"
                                                                                     className={`${inputActive === 'name' && "inputActive"} border-0 p-3 input-bg`}
-                                                                                    placeholder="আপনার নাম"
+                                                                                    placeholder="ড্রাইভার এর নাম"
                                                                                     autoComplete="on"
                                                                                     required
                                                                                 />
                                                                             </div>
-                                                                            <div className='mb-4'>
+                                                                            <div className='mb-3'>
+                                                                                <label htmlFor="age" className='mb-2 ms-1'>বয়স</label>
                                                                                 <input
+                                                                                    id='age'
                                                                                     title='বয়স'
                                                                                     name="age"
                                                                                     value={specificDriverInfo.age || ''}
@@ -250,8 +255,10 @@ const TruckDriversList = () => {
                                                                                     required
                                                                                 />
                                                                             </div>
-                                                                            <div className='mb-4'>
+                                                                            <div className='mb-3'>
+                                                                                <label htmlFor="gender" className='mb-2 ms-1'>লিঙ্গ</label>
                                                                                 <select
+                                                                                    id='gender'
                                                                                     title='লিঙ্গ'
                                                                                     name="gender"
                                                                                     value={specificDriverInfo.gender || ''}
@@ -272,9 +279,11 @@ const TruckDriversList = () => {
                                                                                     <option value="Other">অন্যান্য</option>
                                                                                 </select>
                                                                             </div>
-                                                                            <div className='mb-4'>
+                                                                            <div className='mb-3'>
+                                                                                <label htmlFor="photo" className='mb-2 ms-1'>ড্রাইভার এর ছবি সিলেক্ট করুন</label>
                                                                                 <input
-                                                                                    title='আপনার ছবি সিলেক্ট করুন'
+                                                                                    id='photo'
+                                                                                    title='ড্রাইভার এর ছবি সিলেক্ট করুন'
                                                                                     onChange={handleOnPhotoUpload}
                                                                                     onFocus={() => setInputActive('file')}
                                                                                     onBlur={() => setInputActive('')}
@@ -285,12 +294,14 @@ const TruckDriversList = () => {
                                                                                         setSuccess('');
                                                                                     }}
                                                                                     className={`${inputActive === 'file' && "inputActive"} input-bg border-0 p-3`}
-                                                                                    placeholder="আপনার ছবি সিলেক্ট করুন"
+                                                                                    placeholder="ড্রাইভার এর ছবি সিলেক্ট করুন"
                                                                                     autoComplete="on"
                                                                                 />
                                                                             </div>
-                                                                            <div className='mb-4'>
+                                                                            <div className='mb-3'>
+                                                                                <label htmlFor="phone" className='mb-2 ms-1'>ফোন নাম্বার</label>
                                                                                 <input
+                                                                                    id='phone'
                                                                                     title='ফোন নাম্বার'
                                                                                     name="phone"
                                                                                     value={specificDriverInfo.phone || ''}
@@ -308,8 +319,10 @@ const TruckDriversList = () => {
                                                                                     required
                                                                                 />
                                                                             </div>
-                                                                            <div className='mb-4'>
+                                                                            <div className='mb-3'>
+                                                                                <label htmlFor="pin" className='mb-2 ms-1'>পিন নাম্বার</label>
                                                                                 <input
+                                                                                    id='pin'
                                                                                     title='পিন নাম্বার'
                                                                                     name="pin"
                                                                                     value={specificDriverInfo.pin || ''}
@@ -327,8 +340,10 @@ const TruckDriversList = () => {
                                                                                     required
                                                                                 />
                                                                             </div>
-                                                                            <div className='mb-4'>
+                                                                            <div className='mb-3'>
+                                                                                <label htmlFor="nid" className='mb-2 ms-1'>এন আই ডি নাম্বার</label>
                                                                                 <input
+                                                                                    id='nid'
                                                                                     title='এন আই ডি নাম্বার'
                                                                                     name="nid"
                                                                                     value={specificDriverInfo.nid || ''}
@@ -346,8 +361,10 @@ const TruckDriversList = () => {
                                                                                     required
                                                                                 />
                                                                             </div>
-                                                                            <div className='mb-4'>
+                                                                            <div className='mb-3'>
+                                                                                <label htmlFor="dln" className='mb-2 ms-1'>ড্রাইভিং লাইসেন্স নাম্বার</label>
                                                                                 <input
+                                                                                    id='dln'
                                                                                     title='ড্রাইভিং লাইসেন্স নাম্বার'
                                                                                     name="dln"
                                                                                     value={specificDriverInfo.dln || ''}
@@ -365,7 +382,9 @@ const TruckDriversList = () => {
                                                                                 />
                                                                             </div>
                                                                             <div className='mb-5'>
+                                                                                <label htmlFor="address" className='mb-2 ms-1'>ঠিকানা</label>
                                                                                 <textarea
+                                                                                    id='address'
                                                                                     title='ঠিকানা'
                                                                                     style={{ 'height': '130px' }}
                                                                                     name="address"
