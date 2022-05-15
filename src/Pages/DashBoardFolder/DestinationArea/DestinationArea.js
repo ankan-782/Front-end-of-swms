@@ -7,7 +7,6 @@ const DestinationArea = () => {
     const [inputActive, setInputActive] = useState('');
     const [loadDrivers, setLoadDrivers] = useState([]);
     const [specificDriverInfo, setSpecificDriverInfo] = useState({});
-    const [nidValue, setNidValue] = useState('');
     const [message, setMessage] = useState('');
     const [toggleSearch, setToggleSearch] = useState(false);
 
@@ -16,19 +15,11 @@ const DestinationArea = () => {
     // search specific driver by nid
     const handleSearchFieldOnChange = (e) => {
         const value = e.target.value;
-        setNidValue(value);
-
         if (value === "") {
             setToggleSearch(!toggleSearch);
         }
-    }
-
-    const handleSearch = (e) => {
-        e.preventDefault();
-        const remaining = loadDrivers.filter(driver => driver?.nid === nidValue);
-        setLoadDrivers(remaining);
-        if (remaining.length === 0) {
-            setMessage('কোনো ড্রাইভারকে খুঁজে পাওয়া যায় নি');
+        else {
+            setLoadDrivers(loadDrivers.filter(driver => driver?.cityCorp.toLowerCase().includes(value.toLowerCase())));
         }
     }
 
@@ -90,9 +81,9 @@ const DestinationArea = () => {
         <div className='all-page-bg page-bg-white'>
             <div className='container destination-area-content'>
                 <h1 className='mb-4 text-center'>নির্ধারিত এলাকা</h1>
-                <form onSubmit={handleSearch} className='search-field d-flex mb-5 mx-auto'>
+                <div className='search-field mb-5 mx-auto'>
                     <input title='সিটি কর্পোরেশন ভিত্তিতে সার্চ করুন'
-                        className={`${inputActive === 'search' && "inputActive"} input-bg border-0 p-2 me-2`}
+                        className={`${inputActive === 'search' && "inputActive"} input-bg border-0 p-2 mb-2`}
                         type="search"
                         onChange={handleSearchFieldOnChange}
                         onFocus={() => setInputActive('search')}
@@ -100,8 +91,8 @@ const DestinationArea = () => {
                         placeholder="সিটি কর্পোরেশন ভিত্তিতে সার্চ করুন"
                         aria-label="Search"
                     />
-                    <button className="search-icon" type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
-                </form>
+                    <p className="text-center">সার্চ ফলাফল: {loadDrivers.length}</p>
+                </div>
                 <div className='row g-4'>
                     {
                         loadDrivers.length > 0
@@ -112,9 +103,9 @@ const DestinationArea = () => {
                                         <div className='card-body'>
                                             <div className='mt-2'>
                                                 <p className='driver-nid-destination-page'>NID: {driver.nid}</p>
-                                                <button onClick={() => loadSpecificDriver(driver.nid)} type='button' className="update-icon-destination-page" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-wrench"></i></button>
+                                                <button onClick={() => loadSpecificDriver(driver.nid)} type='button' className="update-icon-destination-page" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i className="fa-solid fa-wrench"></i></button>
 
-                                                <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                     <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                         <div className="modal-content">
                                                             <div className="modal-header">

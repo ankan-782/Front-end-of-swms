@@ -7,18 +7,6 @@
     width: 100%;
 }
 
-.search-icon {
-    border: none;
-    background-color: #50c458;
-    padding: 0 12px;
-    border-radius: 10px;
-    transition: 0.3s ease;
-}
-
-.search-icon:hover {
-    background-color: #6de775;
-}
-
 .driver-info {
     border: 1px solid rgb(121, 173, 121);
     border-radius: 10px;

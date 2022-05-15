@@ -251,7 +251,7 @@ const RegistrationForCityCorp = (props) => {
                                         :
                                         <i onClick={showHideToggleConfirmPassword} className="fa-solid fa-eye show-hide-toggle"></i>}
                                 </div>
-                                <button type='submit' className='form-btn p-3 fw-bold'>সাইন আপ</button>
+                                <button type='submit' className='form-btn p-3 fw-bold'>রেজিস্টার করুন</button>
                             </form>
                             {backendError && (<p className='mt-3 text-danger fw-bold'>{backendError}</p>)}
                             {error && (<p className='mt-3 text-danger fw-bold'>{error}</p>)}

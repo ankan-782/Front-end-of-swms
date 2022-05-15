@@ -60,7 +60,7 @@ const DashBoardLayout = () => {
 
     return (
         <>
-            <div className="offcanvas offcanvas-start page-bg-black" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div className="offcanvas offcanvas-start page-bg-black" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                 <div className="offcanvas-header">
                     <img src={logo} alt="" width="130" height="50" className="d-inline-block align-text-top" />
                     <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>

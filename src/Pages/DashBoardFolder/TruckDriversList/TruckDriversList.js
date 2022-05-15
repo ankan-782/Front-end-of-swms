@@ -199,9 +199,9 @@ const TruckDriversList = () => {
                                                     <p className='driver-nid mt-4'>NID: {driver.nid}</p>
                                                 </div>
                                                 <div className='mt-2'>
-                                                    <button onClick={() => loadSpecificDriver(driver.nid)} type='button' className="update-icon d-block mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-wrench"></i></button>
+                                                    <button onClick={() => loadSpecificDriver(driver.nid)} type='button' className="update-icon d-block mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i className="fa-solid fa-wrench"></i></button>
 
-                                                    <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                         <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                             <div className="modal-content">
                                                                 <div className="modal-header">
@@ -412,7 +412,7 @@ const TruckDriversList = () => {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button onClick={() => { handleDeleteDriver(driver.nid) }} type='button' className="delete-icon"><i class="fa-solid fa-trash"></i></button>
+                                                    <button onClick={() => { handleDeleteDriver(driver.nid) }} type='button' className="delete-icon"><i className="fa-solid fa-trash"></i></button>
                                                 </div>
                                             </div>
                                             <div>
