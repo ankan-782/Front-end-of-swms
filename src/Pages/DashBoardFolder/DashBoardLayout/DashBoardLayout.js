@@ -33,13 +33,13 @@ const DashBoardLayout = () => {
     useEffect(() => {
         if (localStorage.getItem('truckId')) {
             const truckDriverId = localStorage.getItem('truckId');
-            fetch(`http://localhost:5000/truckDriverUsers/${truckDriverId}`)
+            fetch(`https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers/${truckDriverId}`)
                 .then(res => res.json())
                 .then(data => setTruckDriver(data));
         }
         else if (localStorage.getItem('cityId')) {
             const cityCorpUserId = localStorage.getItem('cityId');
-            fetch(`http://localhost:5000/cityCorporationUsers/${cityCorpUserId}`)
+            fetch(`https://enigmatic-tundra-42778.herokuapp.com/cityCorporationUsers/${cityCorpUserId}`)
                 .then(res => res.json())
                 .then(data => setCityCorpUserById(data));
         }

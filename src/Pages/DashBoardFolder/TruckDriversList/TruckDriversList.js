@@ -38,14 +38,14 @@ const TruckDriversList = () => {
 
     // load all drivers in driver list page
     useEffect(() => {
-        fetch('http://localhost:5000/truckDriverUsers')
+        fetch('https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers')
             .then(res => res.json())
             .then(data => setLoadDrivers(data));
     }, [toggleSearch]);
 
     // load specific driver for updatation
     const loadSpecificDriver = (nid) => {
-        fetch(`http://localhost:5000/truckDriverUsers/storeAndUpdateInfo/${nid}`)
+        fetch(`https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers/storeAndUpdateInfo/${nid}`)
             .then(res => res.json())
             .then(data => setSpecificDriverInfo(data));
     }
@@ -133,7 +133,7 @@ const TruckDriversList = () => {
             formData.append('address', specificDriverInfo.address);
             formData.append('photo', photo);
 
-            fetch(`http://localhost:5000/truckDriverUsers/storeAndUpdateInfo/${specificDriverInfo.nid}`, {
+            fetch(`https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers/storeAndUpdateInfo/${specificDriverInfo.nid}`, {
                 method: 'PUT',
                 body: formData
             })
@@ -151,7 +151,7 @@ const TruckDriversList = () => {
     const handleDeleteDriver = nid => {
         const proceed = window.confirm('এই ড্রাইভার এর তথ্য মুছে ফেলতে কি আপনি নিশ্চিত ?');
         if (proceed) {
-            fetch(`http://localhost:5000/truckDriverUsers/storeAndUpdateInfo/${nid}`, {
+            fetch(`https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers/storeAndUpdateInfo/${nid}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

@@ -25,14 +25,14 @@ const DestinationArea = () => {
 
     // load all drivers in driver list page
     useEffect(() => {
-        fetch('http://localhost:5000/truckDriverUsers')
+        fetch('https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers')
             .then(res => res.json())
             .then(data => setLoadDrivers(data));
     }, [toggleSearch]);
 
     // load specific driver for updatation
     const loadSpecificDriver = (nid) => {
-        fetch(`http://localhost:5000/truckDriverUsers/storeAndUpdateInfo/${nid}`)
+        fetch(`https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers/storeAndUpdateInfo/${nid}`)
             .then(res => res.json())
             .then(data => setSpecificDriverInfo(data));
     }
@@ -41,7 +41,7 @@ const DestinationArea = () => {
     const handleUpdateDriver = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:5000/truckDriverUsers/updateDailyTask', {
+        fetch('https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers/updateDailyTask', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
