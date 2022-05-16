@@ -1,4 +1,5 @@
 import React from 'react';
+import contact from '../../../../Images/contact.gif';
 import './Contact.css';
 
 const Contact = () => {
@@ -95,6 +96,9 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-3 order-first order-md-last">
+                        <img src={contact} alt="" className='img-fluid'/>
                     </div>
                 </div>
                 <div className='col-12 col-md-6 col-lg-3'>

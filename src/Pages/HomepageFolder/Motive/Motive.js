@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useAuthValues from '../../../Hooks/useAuthValues';
 import citygif from '../../../Images/city.gif';
 import './Motive.css';
@@ -6,6 +6,13 @@ import './Motive.css';
 const Motive = () => {
     const { fillPercentageValue, handleDatabase } = useAuthValues();
     setInterval(handleDatabase, 3000);
+
+    const [specificDriverInfo, setSpecificDriverInfo] = useState();
+    useEffect(() => {
+        fetch(`https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers/storeAndUpdateInfo/${localStorage.getItem('truckDriverNid')}`)
+        .then(res => res.json())
+        .then(data => setSpecificDriverInfo(data));
+    }, [])
 
     return (
         <>
@@ -17,15 +24,15 @@ const Motive = () => {
                         </div>
                         <div className='row'>
                             <div className='col-4 p-0 d-flex flex-column justify-content-center align-items-center text-center vl'>
-                                {localStorage.getItem('truckId') ? <h1 className="fw-bold">মোহাম্মদপুর</h1> : <h1 className="fw-bold">১টি</h1>}
-                                {localStorage.getItem('truckId') ? <h5 className="fw-bold">STS এলাকা</h5> : <h5 className="fw-bold">শহর</h5>}
+                                {localStorage.getItem('truckId') ? <h1 className="fw-bold">{specificDriverInfo?.stsArea}</h1> : <h1 className="fw-bold">১টি</h1>}
+                                {localStorage.getItem('truckId') ? <h5 className="fw-bold">এস.টি.এস এলাকা</h5> : <h5 className="fw-bold">শহর</h5>}
                             </div>
                             <div className='col-4 p-0 d-flex flex-column justify-content-center align-items-center text-center vl'>
-                                {localStorage.getItem('truckId') ? <h1 className="fw-bold">KA-4700</h1> : <h1 className="fw-bold">২টি</h1>}
+                                {localStorage.getItem('truckId') ? <h1 className="fw-bold">{specificDriverInfo?.truckNo}</h1> : <h1 className="fw-bold">২টি</h1>}
                                 {localStorage.getItem('truckId') ? <h5 className="fw-bold">ট্রাক নং</h5> : <h5 className="fw-bold">সিটি কর্পোরেশন</h5>}
                             </div>
                             <div className='col-4 p-0 d-flex flex-column justify-content-center align-items-center'>
-                                {localStorage.getItem('truckId') ? <h1 className="fw-bold">{fillPercentageValue}%</h1> : <h1 className="fw-bold">২২২টি</h1>}
+                                {localStorage.getItem('truckId') ? <h1 className="fw-bold">{fillPercentageValue}%</h1> : <h1 className="fw-bold">৯০টি</h1>}
                                 {localStorage.getItem('truckId') ? <h5 className="fw-bold">পরিপূর্ণ</h5> : <h5 className="fw-bold">ওয়ার্ড</h5>}
                             </div>
                         </div>

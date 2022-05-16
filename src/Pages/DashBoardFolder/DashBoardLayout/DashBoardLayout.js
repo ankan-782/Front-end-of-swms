@@ -76,7 +76,7 @@ const DashBoardLayout = () => {
                                 className={`${navLinkActive === 'binStatus' && 'active'} nav-item-links-offcanvas`}
                                 style={{ 'cursor': 'pointer' }}
                             >
-                                বিন স্ট্যাটাস
+                                এস.টি.এস এর ডাস্টবিন স্ট্যাটাস
                             </NavLink>
                         </div>}
                         {localStorage.getItem('cityId') && <div className="mb-3">
@@ -112,7 +112,7 @@ const DashBoardLayout = () => {
                                 className={`${navLinkActive === 'destination' && 'active'} nav-item-links-offcanvas`}
                                 style={{ 'cursor': 'pointer' }}
                             >
-                                নির্ধারিত এলাকা
+                                ময়লা তোলার এলাকা ও ট্রাক নির্ধারন
                             </NavLink>
                         </div>}
                         {localStorage.getItem('cityId') && <div className="mb-3">
@@ -130,10 +130,10 @@ const DashBoardLayout = () => {
                     </div>
                     <div>
                         <div className="sign-in-link">
-                            {(user?.email || truckDriver?.nid) ? <div className="dropup d-flex align-items-center w-75">
+                            {(user?.email || truckDriver?.nid) ? <div className="dropup d-flex align-items-center justify-content-start">
                                 <div className='d-flex align-items-center'>
                                     {cityCorpUserById?.photo || truckDriver?.photo ? <img src={`data:image/png;base64,${cityCorpUserById?.photo || truckDriver?.photo}`} className="user-img-dashboard-1 me-3" alt="" /> : <img src={avatar} title="ইউজারের ছবি দেওয়া হয়নি" alt="" className="user-img-dashboard-1 me-3" />}
-                                    {(user?.email || truckDriver?.nid) && <p style={{ 'color': 'rgb(227, 255, 227)' }} className="nav-text text-center fs-5 mb-0 ">{user?.displayName || truckDriver?.displayName}</p>}
+                                    {(user?.email || truckDriver?.nid) && <p style={{ 'color': 'rgb(227, 255, 227)' }} className="nav-text fs-5 mb-0 ">{user?.displayName || truckDriver?.displayName}</p>}
                                 </div>
                                 <button style={{ 'color': 'rgb(227, 255, 227)', 'fontSize': '30px' }} type="button" className="btn btn-transparent px-2 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span className="visually-hidden">Toggle Dropdown</span>

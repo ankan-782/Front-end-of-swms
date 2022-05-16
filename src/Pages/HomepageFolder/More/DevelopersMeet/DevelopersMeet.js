@@ -45,7 +45,7 @@ const DevelopersMeet = () => {
                             </div>
                             <div className='person-field col-12'>
                                 <h2>মোহাম্মদ শোয়াইব</h2>
-                                <h6>গ্রাফিক্স ডিজাইনার</h6>
+                                <h6>ইউ আই, ইউ এক্স ডিজাইনার</h6>
                                 <p></p>
                             </div>
                             <div className='person-field col-12'>

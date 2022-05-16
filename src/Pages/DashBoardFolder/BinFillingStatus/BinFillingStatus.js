@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useAuthValues from '../../../Hooks/useAuthValues';
 import dustBin30 from '../../../Images/bin-status-30.gif';
 import dustBin70 from '../../../Images/bin-status-60.gif';
@@ -11,6 +11,13 @@ const BinFillingStatus = () => {
     const { fillPercentageValue, handleDatabase } = useAuthValues();
     setInterval(handleDatabase, 3000);
     console.log(fillPercentageValue);
+
+    const [specificDriverInfo, setSpecificDriverInfo] = useState();
+    useEffect(() => {
+        fetch(`https://enigmatic-tundra-42778.herokuapp.com/truckDriverUsers/storeAndUpdateInfo/${localStorage.getItem('truckDriverNid')}`)
+        .then(res => res.json())
+        .then(data => setSpecificDriverInfo(data));
+    }, [])
 
     return (
         <div className='all-page-bg page-bg-white d-flex justify-content-center align-items-center'>
@@ -40,8 +47,8 @@ const BinFillingStatus = () => {
                             <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow={fillPercentageValue} aria-valuemin="0" aria-valuemax="100" style={{ 'width': `${fillPercentageValue}%` }}></div>
                         </div>
                         <div>
-                            <h1 className='mb-3'>STS এলাকা: মোহাম্মদপুর</h1>
-                            <h4>ট্রাক নং: KA-4700</h4>
+                            <h1 className='mb-3'>এস.টি.এস এলাকা: {specificDriverInfo?.stsArea}</h1>
+                            <h4>ট্রাক নং: {specificDriverInfo?.truckNo}</h4>
                         </div>
 
                     </div>

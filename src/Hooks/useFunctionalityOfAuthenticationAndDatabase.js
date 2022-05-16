@@ -1,5 +1,5 @@
 import initializeAuthentication from '../FirebaseConfig/firebase.init';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, getIdToken } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, getIdToken, updateProfile } from 'firebase/auth';
 import { getDatabase, ref, child, get } from "firebase/database";
 import { useEffect, useState } from 'react';
 
@@ -67,6 +67,7 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
                 if (data?.pin) {
                     if (data?.pin === pin) {
                         localStorage.setItem('truckId', data._id);
+                        localStorage.setItem('truckDriverNid', data.nid);
                         localStorage.setItem('loggedIn', data._id);
 
                         // const destinationRoute = localStorage.getItem('route');
@@ -91,7 +92,7 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
     }
 
     // Sign up or Registration for city corporation
-    const registrationProcessForCityCorp = (email, password, name, photo) => {
+    const registrationProcessForCityCorp = (email, password, name, photo, navigate) => {
         setIsLoading(true);
         //save city corporation user to the database
         saveCityCorporationUser(email, name, photo, 'POST');
@@ -106,7 +107,19 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
                 const newCityCorporationUser = { email: email, displayName: name };
                 setUser(newCityCorporationUser);
 
+                // send name and photo to firebase after creation
+                updateProfile(auth.currentUser, {
+                    displayName: name,
+                }).then(() => {
+                    // Profile updated!
+                    // ...
+                }).catch((error) => {
+                    setError(error.message);
+                });
+
             })
+
+            
             .catch((error) => {
                 if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
                     setError('');
@@ -120,7 +133,7 @@ const useFunctionalityOfAuthenticationAndDatabase = () => {
 
 
     // Sign up or Registration for truck drivers
-    const registrationProcessForTruckDriver = (truckDriverUserInfos, photo) => {
+    const registrationProcessForTruckDriver = (truckDriverUserInfos, photo, navigate) => {
         setIsLoading(true);
 
         const formData = new FormData();

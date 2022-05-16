@@ -8,7 +8,7 @@ const DashBoardPage = () => {
     return (
         <div className='all-page-bg page-bg-white'>
             <div className='container dashboard-layout'>
-                <h1 className='fw-bold my-lg-5'>ড্যাশবোর্ড</h1>
+                <h1 className='fw-bold mb-4'>ড্যাশবোর্ড</h1>
                 <div className='d-flex flex-column flex-lg-row justify-content-between align-items-center mb-5'>
                     <div className='search-field-dashboard'>
                         <input

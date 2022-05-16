@@ -253,9 +253,9 @@ const RegistrationForCityCorp = (props) => {
                                 </div>
                                 <button type='submit' className='form-btn p-3 fw-bold'>রেজিস্টার করুন</button>
                             </form>
-                            {backendError && (<p className='mt-3 text-danger fw-bold'>{backendError}</p>)}
-                            {error && (<p className='mt-3 text-danger fw-bold'>{error}</p>)}
-                            {success && (<p className='mt-3 text-danger fw-bold'>{success}</p>)}
+                            {backendError && (<p className='mt-3 text-danger text-center fw-bold'>{backendError}</p>)}
+                            {error && (<p className='mt-3 text-danger text-center fw-bold'>{error}</p>)}
+                            {success && (<p className='mt-3 text-danger text-center fw-bold'>{success}</p>)}
                         </div>
                     </div>
                 </div>

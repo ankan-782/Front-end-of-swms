@@ -45,9 +45,9 @@ const Footer = () => {
                             <p className='m-0 footer-description'>ডিজিটাল বাংলাদেশ এর অগ্রযাত্রায় সিটি কর্পোরেশন-এর বর্জ্যের সঠিক ব্যবস্থাপনা এবং বর্জ্য থেকে সম্পদ উৎপাদনের লক্ষ্যে এই স্বয়ংক্রিয় ব্যবস্থাপনার উন্মোচন। বর্জ্যের সঠিক ব্যবস্থাপনা আমাদের আর্থ-সামাজিক উন্নয়নের পাশাপাশি নিরাপদ পরিবেশ নিশ্চিত করতে সহায়তা করে। রাজধানী শহর ঢাকাকে কেন্দ্র করে ২টি সিটি কর্পোরেশন এবং ২২২টি ওয়ার্ড নিয়ে এই স্বয়ংক্রিয় বর্জ্য ব্যবস্থাপনার যাত্রা শুরু ।</p>
                             <div className='mt-5'>
                                 <h3 style={{ 'color': '#50c458' }} className='ms-1 mb-3'>ইমেইলে আপডেট গ্রহন করুন</h3>
-                                <form action="">
+                                <form onSubmit={(e)=>{e.preventDefault()}}>
                                     <input title='আপনার ইমেইল আইডি' name='email' onFocus={() => setInputActive('email')} onBlur={() => setInputActive('')} type="email" className={`${inputActive === 'email' && "inputActive"} input-bg border-0 p-3`} placeholder="আপনার ইমেইল আইডি" autoComplete="on" required />
-                                    <button type='submit' className='form-btn mt-4 p-3 fw-bold'>পাঠিয়ে দিন</button>
+                                    <button type='submit' onClick={()=>{alert('আপনাকে শীঘ্রই আপডেট সম্পর্কে অবহিত করা হবে')}} className='form-btn mt-4 p-3 fw-bold'>পাঠিয়ে দিন</button>
                                 </form>
                             </div>
                         </div>

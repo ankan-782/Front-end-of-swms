@@ -54,6 +54,8 @@ const Navbar = () => {
         }
     }
 
+    console.log(user, user?.displayName);
+
     return (
         <>
             <div id='navbar'>
