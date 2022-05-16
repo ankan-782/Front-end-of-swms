@@ -24,15 +24,15 @@ const Motive = () => {
                         </div>
                         <div className='row'>
                             <div className='col-4 p-0 d-flex flex-column justify-content-center align-items-center text-center vl'>
-                                {localStorage.getItem('truckId') ? <h1 className="fw-bold">{specificDriverInfo?.stsArea}</h1> : <h1 className="fw-bold">১টি</h1>}
+                                {localStorage.getItem('truckId') ? <h3 className="fw-bold">{specificDriverInfo?.stsArea}</h3> : <h1 className="fw-bold">১টি</h1>}
                                 {localStorage.getItem('truckId') ? <h5 className="fw-bold">এস.টি.এস এলাকা</h5> : <h5 className="fw-bold">শহর</h5>}
                             </div>
                             <div className='col-4 p-0 d-flex flex-column justify-content-center align-items-center text-center vl'>
-                                {localStorage.getItem('truckId') ? <h1 className="fw-bold">{specificDriverInfo?.truckNo}</h1> : <h1 className="fw-bold">২টি</h1>}
+                                {localStorage.getItem('truckId') ? <h3 className="fw-bold">{specificDriverInfo?.truckNo}</h3> : <h1 className="fw-bold">২টি</h1>}
                                 {localStorage.getItem('truckId') ? <h5 className="fw-bold">ট্রাক নং</h5> : <h5 className="fw-bold">সিটি কর্পোরেশন</h5>}
                             </div>
                             <div className='col-4 p-0 d-flex flex-column justify-content-center align-items-center'>
-                                {localStorage.getItem('truckId') ? <h1 className="fw-bold">{fillPercentageValue}%</h1> : <h1 className="fw-bold">৯০টি</h1>}
+                                {localStorage.getItem('truckId') ? <h3 className="fw-bold">{fillPercentageValue}%</h3> : <h1 className="fw-bold">৯০টি</h1>}
                                 {localStorage.getItem('truckId') ? <h5 className="fw-bold">পরিপূর্ণ</h5> : <h5 className="fw-bold">ওয়ার্ড</h5>}
                             </div>
                         </div>
