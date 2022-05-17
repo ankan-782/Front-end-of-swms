@@ -13,11 +13,12 @@ const Procedure = () => {
                         style={{ 'border': '1px solid #50c458', 'padding': '20px', 'borderRadius': '10px' }}
                         width="1000"
                         height="500"
-                        src="https://www.youtube.com/embed/u5GZSGvx96U"
+                        src="https://www.youtube.com/embed/bsBZgFcJ_xA"
                         title="YouTube video player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
+                        allowfullscreen
+                    >
                     </iframe>
                 </div>
             </div>

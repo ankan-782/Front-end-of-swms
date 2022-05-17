@@ -26,7 +26,7 @@ const RegistrationForTruckDriver = (props) => {
             <div className='d-none d-xxl-block'>
                 <div className='all-page-bg page-bg-white d-flex justify-content-center align-items-center'>
                     <div className='container registration-for-truckDriver-content'>
-                        <h1 className='mb-5 text-center'>ট্রাক ড্রাইভার ইউজারদের জন্যে</h1>
+                        <h1 className='mb-5 text-center'>রেজিস্টার ট্রাক ড্রাইভার</h1>
                         <div className="form-portion">
                             <form onSubmit={handleRegistrationForTruckDriver} className="form mx-auto mb-3">
                                 <div className='d-flex justify-content-between mb-4'>

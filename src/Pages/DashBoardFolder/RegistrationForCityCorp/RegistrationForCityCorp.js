@@ -27,7 +27,7 @@ const RegistrationForCityCorp = (props) => {
             <div className='d-none d-xxl-block'>
                 <div className='all-page-bg page-bg-white d-flex justify-content-center align-items-center'>
                     <div className='container registration-for-cityCorp-content'>
-                        <h1 className='mb-5 text-center'>সিটি কর্পোরেশন অথোরিটি ব্যবহারের জন্যে</h1>
+                        <h1 className='mb-5 text-center'>রেজিস্টার এডমিন ইউজার</h1>
                         <div className='form-portion'>
                             <form onSubmit={handleRegistrationForCityCorp} className="form mx-auto mb-4">
                                 <div className='mb-4'>
